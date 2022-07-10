@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      eedeleon
+HostName                       zuma.eecs.uci.edu
+ProcessIdentifier              24997
+ProcessCreationTime_UTC        1575003572
+ProcessCreationTime_Readable   Thu Nov 28 20:59:32 2019 PST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /users/ugrad/2017/fall/eedeleon/eecs119/Cadence6/homework2/or_gate/schematic/sch.oa.cdslck.dirlck
+TimeEditLocked                 Thu Nov 28 21:12:38 2019 PST
