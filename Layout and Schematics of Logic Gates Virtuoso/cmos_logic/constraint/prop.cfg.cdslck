@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      eedeleon
+HostName                       zuma.eecs.uci.edu
+ProcessIdentifier              7352
+ProcessCreationTime_UTC        1573414463
+ProcessCreationTime_Readable   Sun Nov 10 11:34:23 2019 PST
+AppIdentifier                  /ecelib/linware/cadence/ic616/tools/dfII/bin/32bit/virtuoso
+OSType                         lnx86
+ReasonForPlacingEditLock       
+FilePathUsedToEditLock         /users/ugrad/2017/fall/eedeleon/eecs119/Cadence6/homework/cmos_logic/constraint/prop.cfg
+TimeEditLocked                 Sun Nov 10 12:34:01 2019 PST
