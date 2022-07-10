@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}PharmCreateAccount{% endblock %}
+{% block headerlink %}{% url 'login' %}{% endblock %}
+{% block regislink %}Sign in{% endblock %}
+{% block content %}
+<div class="wrapper">
+	<div class="panel form-panel">
+		<div class="form-label">Create your Account</div>
+		<form class="user-form" id="createaccount_form" action = ''  method='POST'>
+			{% csrf_token %}
+			{{form}}
+		<input class="form-submit" id = "create_account_button" type='submit' value ='Create Account'>
+    </form>
+	</div>
+</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block contentcss %}
+<style>
+.wel-header{
+	position: relative;
+}
+.regis-link{
+  color: rgb(46, 46, 46);
+}
+.site-content{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+{% endblock %}

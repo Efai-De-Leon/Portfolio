@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{request.user}}{% endblock %}
+{% block content %}
+<div class="wrapper">
+	<div class="panel title-panel">
+		<h2 class="h2">User settings</h2>
+	</div>
+	<div class="panel article-section">
+		<p>{{request.user}}</p>
+	</div>
+</div>
+{% endblock %}
+{% block contentcss %}
+<style>
+	#about_link {
+		color: white;
+		background: var(--link-bg);
+	}
+
+	.wrapper {
+		display: grid;
+		grid-gap: 20px;
+	}
+</style>
+{% endblock %}

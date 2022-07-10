@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock %}
+{% block headerlink %}{% url 'login' %}{% endblock %}
+{% block endjs %}
+<script>
+  const welHeader = document.querySelector(".wel-header");
+  welHeader.style.transition = "0.25s";
+
+  if (window.scrollY > 20) {
+    welHeader.style.backgroundColor = "#13547a";
+  } else {
+    welHeader.style.backgroundColor = "rgba(0,0,0,0)";
+  }
+  window.addEventListener('scroll', () => {
+    welHeader.style.transition = "0.25s";
+    if (window.scrollY > 20) {
+      welHeader.style.backgroundColor = "#13547a";
+    } else {
+      welHeader.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+  });
+</script>
+{% endblock %}
+{% block content %}
+<div class="wrapper">
+
+  <div class="wel-create-container">
+    <a class="wel-link wel-button border-box" href="{% url 'createaccount' %}" aria-label="Create Account">Create
+      Account</a>
+  </div>
+
+  <div class="side-by-side">
+    <div class="welcome-text-container border-box">
+      <h3 class="h3">SmartFarmer</h3>
+      <p>Our project is an IoT project based on providing soil, temperature, and other useful data regarding a farmers
+        plot and provide these said data as a cloud service with an intuitive UI. This plan will involve several
+        micro-controllers with sensors attached connected to a mesh network and uploading that data to a cloud database
+        for the farmer to see. </p>
+    </div>
+    <div class="wel-contact-container border-box">
+      <a class="wel-link wel-button border-box" href="{% url 'contact' %}" aria-label="Contact">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="to-be-named"></div>
+
+</div>
+{% endblock %}
+{% block contentcss %}
+<style>
+  .center {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .wrapper {
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+  }
+
+  .border-box {
+    box-sizing: border-box;
+  }
+
+  .wel-button {
+    font-size: 4rem;
+    padding: 20px 10px;
+    background: white;
+  }
+
+  .wel-create-container {
+    height: 400px;
+    width: 100%;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(195deg, #13547a 0%, #6eb8af 100%);
+  }
+
+  .wel-create-account-button:hover {
+    box-shadow: 0 1px 7px 1px rgba(0, 0, 0, 0.096);
+  }
+
+  .side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wel-contact-container {
+    background: rgb(228, 212, 183);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    border: 25px solid rgb(97, 99, 105);
+  }
+
+  .welcome-text-container {
+    width: 100%;
+    padding: 30px 20px;
+    color: rgb(254, 255, 254);
+    background: rgb(97, 99, 105);
+    min-height: 400px;
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  .welcome-text-container h3 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .welcome-text-container p {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin: 0;
+    align-self: flex-end;
+  }
+
+  .to-be-named {
+    background: rgb(91, 163, 164);
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .footer-container {
+    color: white;
+    background: rgb(58, 58, 58);
+    margin: 0;
+  }
+</style>
+{% endblock %}

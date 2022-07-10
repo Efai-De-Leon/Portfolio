@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}PharmSignin{% endblock %}
+{% block headerlink %}{% url 'createaccount' %}{% endblock %}
+{% block regislink %}Register{% endblock %}
+{% block content %}
+<div class = "wrapper">
+	<div class="form-panel">
+		<div class="form-label">Sign in</div>
+		<form class="user-form" id="login_form" action = '' method='POST'>
+			{% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username">
+        <label>Password</label>
+        <input type="password" name="password">
+			<input class="form-submit" id="signin_button" type='submit' value ='Sign in'>
+		</form>
+	</div>
+</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block contentcss %}
+<style>
+.wel-header{
+	position: relative;
+}
+.regis-link{
+  color: rgb(29,29,29);
+}
+.site-content{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#signin_label{
+  display: flex;
+  margin: auto;
+  text-align: center;
+}
+#create_account_label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+#create_account_link{
+  font-size: 20px;
+  color: var(--link-color);
+  text-decoration: none;
+}
+#create_account_link:hover{
+  text-decoration: underline;
+}
+</style>
+{% endblock %}

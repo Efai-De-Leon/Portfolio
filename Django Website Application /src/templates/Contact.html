@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}PharmContact{% endblock %}
+{% block headerlink %}{% url 'login' %}{% endblock %}
+{% block sidebar %}
+{% endblock %}
+{% block content %}
+<div class="wrapper">
+	<div class="panel title-panel">
+		<h2 class="h2">Contact Us</h2>
+	</div>
+	<div class="panel article-section">
+		<h5>Efai De Leon </h5>
+		<p>Front-End Web Development </p>
+		<a href="mailto:eedeleon@uci.edu?subject=subject text"> eedeleon@uci.edu </a>
+
+	</div>
+	<div class="panel article-section">
+		<h5>Junning Li </h5>
+		<p>Hardware Component </p>
+		<a href="mailto:junninl@uci.edu?subject=subject text"> junninl@uci.edu </a>
+	</div>
+	<div class="panel article-section">
+		<h5>Tram Lam </h5>
+		<p> Front-End and Back-End Development</p>
+		<a href="mailto:lamtp1@uci.edu?subject=subject text"> lamtp1@uci.edu </a>
+	</div>
+	<div class="panel article-section">
+		<h5>Justin Kim </h5>
+		<p>Back-End Development </p>
+		<a href="mailto:justiyk2@uci.edu?subject=subject text"> justiyk2@uci.edu </a>
+	</div>
+</div>
+{% endblock %}
+{% block contentcss %}
+<style>
+	.wel-header{
+		position: relative;
+	}
+	.regis-link{
+		color: rgb(46, 46, 46);
+	}
+	#contact_link{
+  		color:white;
+  		background: var(--link-bg);
+	}
+	.wrapper {
+  		display: grid;
+  		grid-gap: 20px;
+	}
+</style>
+{% endblock %}
