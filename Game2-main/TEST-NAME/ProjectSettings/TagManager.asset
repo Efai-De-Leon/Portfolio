@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Cotton
+  - RubberBall
+  - Battery
+  - ClothButton
+  - NeedleEnemy
+  - BatteryParticleSpawner
+  - CottonParticleSpawner
+  - Pillar
+  - Enemy
+  - NeedleEnemySpawner
+  - VFXSpawner
+  - SpawnPickUpErasers
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Cotton Blocks
+  - On Top Of Cotton Blocks
+  - Nav Surface
+  - Walls
+  - Barrier
+  - Enemy
+  - Laser
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
