@@ -1,3 +1,6 @@
 [submodule "Boat-BasketBall-Unity"]
 	path = Boat-BasketBall-Unity
 	url = https://github.com/Efai-De-Leon/Boat-BasketBall-Unity.git
+[submodule "Yarn-Cutting-Unity"]
+	path = Yarn-Cutting-Unity
+	url = https://github.com/Efai-De-Leon/Yarn-Cutting-Unity.git
