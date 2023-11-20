@@ -1,2 +1,2 @@
 # Chat Application
-![Alt Text](chat\ application\ c.gif)
+![Alt Text](chat_application_c.gif)
