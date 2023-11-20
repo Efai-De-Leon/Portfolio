@@ -4,8 +4,8 @@ form = cgi.FieldStorage()                                                       
 import pymysql
 
 db = pymysql.connect(host='127.0.0.1',
-                     user='gallery',
-                     password='eecs118',
+                     user='root',
+                     password='hormigero',
                      db='gallery')
 #cur=db.cursor()
 #sql="SELECT * FROM artist"
@@ -69,7 +69,9 @@ def artist(artistid):
 
 def picture(imgid):
     anothercur = db.cursor()
-    sql="SELECT title, link FROM image WHERE image_id = " + str(imgid)
+    #if imgid != None:
+    sql="SELECT title, link FROM image WHERE image_id = " + str('NULL')
+    #    print('here')
     anothercur.execute(sql)
     for info in anothercur.fetchall():
         print("<form action='' id = 'title_form' method ='POST'>")
@@ -90,7 +92,7 @@ def picture(imgid):
         print("</div>")
         print("<br>")
     anothercur2 = db.cursor()
-    sql="SELECT year, type, width, height, location, description FROM detail WHERE image_id = " + str(imgid)
+    #sql="SELECT year, type, width, height, location, description FROM detail WHERE image_id = " + str(imgid)
     anothercur2.execute(sql)
     print("<form action='' method ='POST'>")
     someDes = ['Year', 'Type', 'Width', 'Height', 'Location', 'Description']
@@ -108,11 +110,11 @@ def picture(imgid):
         print("</form>")
             #pictureInfo.append(detailrow[y])
     anothercur3 = db.cursor()
-    sql="SELECT artist_id FROM image WHERE image_id = " + str(imgid)
+    #sql="SELECT artist_id FROM image WHERE image_id = " + str(imgid)
     anothercur3.execute(sql)
     for artistid in anothercur3.fetchall():
         anothercur4 = db.cursor()
-        sql="SELECT name FROM artist WHERE artist_id = " + str(artistid[0])
+     #   sql="SELECT name FROM artist WHERE artist_id = " + str(artistid[0])
         anothercur4.execute(sql)
         for artistrow in anothercur4.fetchall():
             print("<label>")

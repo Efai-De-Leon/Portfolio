@@ -1,11 +1,12 @@
+#!/usr/bin/env python3 
 import cgi
 form = cgi.FieldStorage()                                                                   #cgi function to "GET" the form
 
 import pymysql
 
 db = pymysql.connect(host='127.0.0.1',
-                     user='gallery',
-                     password='eecs118',
+                     user='root',
+                     password='hormigero',
                      db='gallery')
 
 anothercursor = db.cursor()
