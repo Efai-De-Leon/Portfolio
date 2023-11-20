@@ -1,2 +1,2 @@
 # Multi-Threaded Web Server
-![Alt Text](multithreaded server client.gif)
+![Alt Text](multithreaded_server_client.gif)

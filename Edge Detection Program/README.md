@@ -1,2 +1,2 @@
 # Edge Detection Program
-![Alt Text](edge detection.gif)
+![Alt Text](edge_detection.gif)

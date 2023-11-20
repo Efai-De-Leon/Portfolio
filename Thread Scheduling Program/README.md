@@ -1,2 +1,2 @@
 # Thread Scheduling Program
-![Alt Text](thread scheduling.gif)
+![Alt Text](thread_scheduling.gif)

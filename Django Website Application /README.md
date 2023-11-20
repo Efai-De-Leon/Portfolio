@@ -1,2 +1,2 @@
 # Django Website Application
-![Alt Text](django webapplication.gif)
+![Alt Text](django_webapplication.gif)
