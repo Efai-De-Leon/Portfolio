@@ -1,7 +1,7 @@
 # Chat Application
 ![Alt Text](chat_application_c.gif)
 
-#How to Run
+# How to Run
 
 - Run the following commands in the terminal
 - make Server
