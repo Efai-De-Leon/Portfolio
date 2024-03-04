@@ -1,0 +1,19 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "build-server",
+            "command": "make",
+            "args": ["Server"],
+            "problemMatcher": "$gcc",
+        },
+        {
+            "type": "cppbuild",
+            "label": "build-client",
+            "command": "make",
+            "args": ["Client"],
+            "problemMatcher": "$gcc",
+        }
+    ],
+    "version": "2.0.0"
+}
