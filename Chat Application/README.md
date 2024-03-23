@@ -1,7 +1,6 @@
 # Chat Application
 ![Alt Text](chat_application_c.gif)
 
-#How to Run
 # How to Run
 
 - type `make` on the terminal in the root directory
