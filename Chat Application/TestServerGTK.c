@@ -22,8 +22,16 @@ int Shutdown;
 int SignUp = 0;
 int SignIn = 0;
 int FlagDisconnect = 0;
+int FriendFlag = 0;
+RUNENTRY *temp;
 // int RetFriendList=0;
-//  Used to print critical error diagnostic
+
+/**
+ * @brief
+ * Used to print critical error diagnostic
+ * @param ErrorMsg
+ * Receives the error message to display
+ */
 void FatalError(const char *ErrorMsg)
 {
 #ifdef DEBUG
@@ -74,7 +82,13 @@ int MakeServerSocket(uint16_t PortNo)
 	return SocketFD;
 }
 
-// Function to handle all the requests
+/**
+ * @brief
+ * Function to handle all the requessts
+ * @param DataSocketFD
+ * @param ReadFDs
+ * @param runlist
+ */
 void ProcessRequest(int DataSocketFD, fd_set ReadFDs, RUNLIST *runlist)
 {
 
@@ -106,6 +120,11 @@ void ProcessRequest(int DataSocketFD, fd_set ReadFDs, RUNLIST *runlist)
 	if (chk != NULL)
 	{
 		SignIn = 1;
+	}
+	chk = strstr(RecvBuf, "friend_list");
+	if (chk != NULL)
+	{
+		FriendFlag = 1;
 	}
 	/*	chk = strstr(RecvBuf, "ReturnFriendList");
 		if (chk!=NULL)
@@ -192,7 +211,7 @@ void ProcessRequest(int DataSocketFD, fd_set ReadFDs, RUNLIST *runlist)
 			{
 				//					USER *temp = CreateReturnUser(UserName);
 				strncpy(SendBuf, "success", sizeof(SendBuf) - 1);
-				RUNENTRY *temp = CreateRunEntry(CreateReturnUser(UserName), DataSocketFD);
+				temp = CreateRunEntry(CreateReturnUser(UserName), DataSocketFD);
 
 				printf("LOGIN: Created RUNENTRY: username: %s   socketID: %d\n", temp->user->username, temp->socketID);
 				AppendRunEntry(temp, runlist);
@@ -212,9 +231,30 @@ void ProcessRequest(int DataSocketFD, fd_set ReadFDs, RUNLIST *runlist)
 			}
 			SignIn = 0;
 		}
+	}
+	else if (FriendFlag != 0)
+	{
+		RUNENTRY *e, *n;
+		e = runlist->first;
+
+		// finding the correct user asking the server for their friend list
+		while(e)
+		{
+			n = e->next;
+			if (DataSocketFD == e->socketID)
+			{
+				break;
+			}
+			e = n;
+		}	
+
+		// loading the friend list to send back to the user
+		strncpy(SendBuf, "success", sizeof(SendBuf) - 1);
+		strcat(SendBuf, " ");
+		strcat(SendBuf, e->user->friendlist);
+		FriendFlag = 0;
 		SendBuf[sizeof(SendBuf) - 1] = 0;
 	}
-
 	else
 	{
 
